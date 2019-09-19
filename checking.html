@@ -21,3 +21,27 @@
           </form>
 </body>
 </html>
+
+//write this on a seperate php file
+
+<?php
+  
+  $con=mysqli_connect("localhost","root","lucky","names");
+  $name=$_POST['name'];
+  
+  echo $name;
+  
+  if(mysqli_connect_errno()){
+	  echo "failed connecting".mysqli_connect_errno();
+  }
+  
+  $sql="insert into name(nnn) values('$name')";
+  
+  if(mysqli_query($con,$sql)) {
+		echo "succcess";
+  }
+  
+  else {
+	  echo "errpr".mysql_error();
+  }
+ ?>
